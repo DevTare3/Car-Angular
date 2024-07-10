@@ -1,0 +1,31 @@
+
+<h2>Our Inventory:</h2>
+<div class="container">
+        
+    @for (car of cars; track car.name) {
+        <div class="car-card">
+            <div class="img-container">
+            <img [src]="car.img" [alt]="car.description">
+            </div>
+            <h2>{{car.name}}</h2>
+            <p class="model">{{car.model}}</p>
+            <p>{{car.year}}</p>
+            <p class="price">{{car.price}}</p>
+            <button class="cta"><a routerLink="/car">View the vehicle</a></button>
+        </div>
+    }
+</div>
+
+<style>
+    .cta{
+        text-transform: capitalize;
+    }
+    .container{
+        margin-block-start: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+        gap:1em;
+    }
+</style>
